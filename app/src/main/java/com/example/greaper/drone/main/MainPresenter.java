@@ -6,6 +6,7 @@ import android.support.v4.app.ListFragment;
 
 import com.example.greaper.drone.main.dashboard.DashboardFragment;
 import com.example.greaper.drone.main.drone.DroneFragment;
+import com.example.greaper.drone.main.drone.TabDroneFragment;
 import com.example.greaper.drone.main.profile.ProfileFragment;
 import com.example.greaper.drone.main.report.ReportFragment;
 import com.example.greaper.drone.main.video.VideoFragment;
@@ -66,7 +67,7 @@ public class MainPresenter {
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new DashboardFragment());
         fragmentList.add(new VideoFragment());
-        fragmentList.add(new DroneFragment());
+        fragmentList.add(TabDroneFragment.newInstance());
         fragmentList.add(new ReportFragment());
         fragmentList.add(new ProfileFragment());
         return fragmentList;
