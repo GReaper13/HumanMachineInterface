@@ -19,6 +19,44 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/manager"/>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/ivAvatar"
+                    android:text="Tên: Thân Văn Thái"
+                    android:textColor="@color/black"
+                    android:paddingStart="20dp"
+                    android:textStyle="bold"
+                    android:paddingEnd="0dp"/>
+
+                <TextView
+                    android:id="@+id/tvRole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/ivAvatar"
+                    android:layout_below="@id/tvName"
+                    android:text="Chức vụ: Quản trị viên"
+                    android:textColor="@color/black"
+                    android:paddingStart="20dp"
+                    android:layout_marginTop="3dp"
+                    android:paddingEnd="0dp"/>
+
+            </RelativeLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
