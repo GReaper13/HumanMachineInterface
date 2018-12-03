@@ -43,7 +43,10 @@ public class DroneAdapter extends RecyclerView.Adapter<DroneAdapter.DroneViewHol
 
     @Override
     public void onBindViewHolder(@NonNull DroneViewHolder holder, int i) {
-        holder.droneName.setText(droneList.get(i).getName());
+        Drone drone = droneList.get(i);
+        String droneName = droneList.get(i).getName();
+
+        holder.droneName.setText("Drone " + drone.getId() + ": Số hiệu: " + droneName);
 
         if (onItemClickListener != null) {
             holder.droneName.setOnClickListener(view -> onItemClickListener.onClick(i));

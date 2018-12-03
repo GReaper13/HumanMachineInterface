@@ -49,7 +49,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_settings" />
+                    android:src="@drawable/ic_photo" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -84,7 +84,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_settings" />
+                    android:src="@drawable/ic_notifications" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -168,7 +168,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_settings" />
+                    android:src="@drawable/web" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -218,7 +218,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_settings" />
+                    android:src="@drawable/info" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -253,7 +253,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_settings" />
+                    android:src="@drawable/question" />
 
                 <TextView
                     android:layout_width="0dp"
