@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.greaper.drone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".ui.DroneActivity"
             android:screenOrientation="portrait" />
@@ -34,7 +35,16 @@
         <activity android:name=".ui.AccountSettingsActivity" />
         <activity android:name=".ui.ChangePasswordActivity" />
         <activity android:name=".ui.HelpActivity" />
-        <activity android:name=".ui.FAQActivity"/>
+        <activity android:name=".ui.FAQActivity" />
+        <activity android:name=".ui.ReportActivity"></activity>
+        <activity
+            android:name=".ui.DetailReportActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.VideoActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.VideoDroneActivity">
+        </activity>
     </application>
 
 </manifest>

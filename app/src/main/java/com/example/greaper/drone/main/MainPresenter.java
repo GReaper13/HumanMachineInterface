@@ -68,9 +68,15 @@ public class MainPresenter {
         fragmentList.add(new DashboardFragment());
         fragmentList.add(new VideoFragment());
         fragmentList.add(TabDroneFragment.newInstance());
-        fragmentList.add(new ReportFragment());
+        ReportFragment reportFragment = new ReportFragment();
+        reportFragment.setOnReportFragmentListener(() -> {
+            mainView.clickReport();
+        });
+        fragmentList.add(reportFragment);
         fragmentList.add(new ProfileFragment());
         return fragmentList;
     }
+
+
 
 }

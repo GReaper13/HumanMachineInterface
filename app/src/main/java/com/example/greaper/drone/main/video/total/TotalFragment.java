@@ -28,7 +28,7 @@ public class TotalFragment extends Fragment {
     RecyclerView rvTotal;
     Unbinder unbinder;
 
-    private TotalAdapter totalAdapter;
+        private TotalAdapter totalAdapter;
 
     public TotalFragment() {
         // Required empty public constructor
@@ -57,7 +57,6 @@ public class TotalFragment extends Fragment {
         list.add(new TotalItem("10/11/2018", 0));
         list.add(new TotalItem("11/11/2018", 1));
         list.add(new TotalItem("12/11/2018", 0));
-        totalAdapter.setTotalItemList(list);
         rvTotal.setLayoutManager(new LinearLayoutManager(getContext()));
         rvTotal.setAdapter(totalAdapter);
     }

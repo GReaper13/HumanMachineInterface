@@ -21,6 +21,7 @@
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:layout_centerInParent="true"
+            android:id="@+id/txt_title"
             />
 
         <LinearLayout
@@ -45,6 +46,23 @@
                 android:background="?android:selectableItemBackground"
                 android:id="@+id/img_filter"/>
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/layout_add"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/ivAddDrone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_add"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"/>
+        </RelativeLayout>
     </RelativeLayout>
 
     <android.support.v4.view.ViewPager

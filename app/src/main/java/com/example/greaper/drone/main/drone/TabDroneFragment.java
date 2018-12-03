@@ -40,9 +40,6 @@ public class TabDroneFragment extends Fragment {
     public TabDroneFragment() {
     }
 
-    @BindView(R.id.ivAddDrone)
-    ImageView ivAddDrone;
-
     @BindView(R.id.rvDrone)
     RecyclerView rvDrone;
     DroneAdapter adapter;

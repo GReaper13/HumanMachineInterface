@@ -25,9 +25,11 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalHolder>
     public List<TotalItem> getTotalItemList() {
         return totalItemList;
     }
+    private VideoListener videoListener;
 
-    public void setTotalItemList(List<TotalItem> totalItemList) {
+    public void setTotalItemList(List<TotalItem> totalItemList, VideoListener videoListener) {
         this.totalItemList = totalItemList;
+        this.videoListener = videoListener;
     }
 
     @NonNull
@@ -69,7 +71,16 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalHolder>
             } else {
                 imgComplete.setImageResource(R.drawable.ic_close);
             }
+            layoutContent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    videoListener.onClickItem();
+                }
+            });
         }
     }
 
+    public interface VideoListener {
+        void onClickItem();
+    }
 }

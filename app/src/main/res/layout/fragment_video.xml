@@ -5,54 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".main.video.VideoFragment">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:id="@+id/layout_title">
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_total">
+    </android.support.v7.widget.RecyclerView>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Total"
-            android:gravity="center"
-            android:textAllCaps="true"
-            android:textColor="#000"
-            android:id="@+id/txt_total"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Drone"
-            android:gravity="center"
-            android:textAllCaps="true"
-            android:textColor="#000"
-            android:id="@+id/txt_drone"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_below="@id/layout_title"
-        android:id="@+id/layout_indicator"
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="2dp">
-
-        <View
-            android:layout_weight="1"
-            android:id="@+id/bottom_line"
-            android:background="@color/main_color"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
-
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/layout_indicator"
-        android:id="@+id/vp_video">
-    </android.support.v4.view.ViewPager>
 </RelativeLayout>

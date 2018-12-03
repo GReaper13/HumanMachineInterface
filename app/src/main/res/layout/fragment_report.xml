@@ -156,7 +156,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:id="@+id/layout_content_3"
+        android:id="@+id/layout_date_3"
         android:background="#4609b1d7"
         android:layout_marginStart="7dp"
         android:layout_marginEnd="7dp"

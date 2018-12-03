@@ -8,4 +8,20 @@
     <string name="start">Bắt đầu</string>
     <string name="account">Account</string>
     <string name="logout">Logout</string>
+
+    <string name="location">Location: </string>
+    <string name="report_detail">Report detail</string>
+    <string name="select_drone">Select drone to view : </string>
+    <string name="detail">Detail: </string>
+    <string name="ranger">Ranger</string>
+    <string name="time">Time</string>
+    <string name="video">Video</string>
+    <string name="show_full_video">Double touch on video to enjoy video!</string>
+    <string name="report">Report</string>
+    <string name="select_count_drone">Number drones</string>
+    <string name="drone_to_view">Select drone(s) to view: </string>
+    <string name="count_drone">Count drone per view</string>
+    <string name="count_drone_error">Valid input</string>
+    <string name="select_icon_to_view">Select an icon to view detail.</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

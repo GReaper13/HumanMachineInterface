@@ -1,5 +1,6 @@
 package com.example.greaper.drone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.example.greaper.drone.main.MainPagerAdapter;
 import com.example.greaper.drone.main.MainPresenter;
 import com.example.greaper.drone.main.MainView;
+import com.example.greaper.drone.ui.ReportActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
     ImageView imgSearch;
     @BindView(R.id.img_filter)
     ImageView imgFilter;
+    @BindView(R.id.txt_title)
+    TextView txtTitle;
 
     boolean isFilterByDate = true;
     @BindView(R.id.layout_option)
@@ -117,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showDashboard(boolean enable) {
+        txtTitle.setText(R.string.dashboard);
         if (enable) {
             lineDashboard.setVisibility(View.VISIBLE);
             imgDashboard.setImageResource(R.drawable.ic_graph_blue);
@@ -130,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showVideo(boolean enable) {
+        txtTitle.setText(R.string.video);
         if (enable) {
             lineVideo.setVisibility(View.VISIBLE);
             imgVideo.setImageResource(R.drawable.ic_video_blue);
@@ -143,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showDrone(boolean enable) {
+        txtTitle.setText(R.string.drone);
         if (enable) {
             lineDrone.setVisibility(View.VISIBLE);
             imgDrone.setImageResource(R.drawable.ic_drone_blue);
@@ -156,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showReport(boolean enable) {
+        txtTitle.setText(R.string.report);
         if (enable) {
             lineReport.setVisibility(View.VISIBLE);
             imgReport.setImageResource(R.drawable.ic_report_blue);
@@ -169,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showAccount(boolean enable) {
+        txtTitle.setText(R.string.account);
         if (enable) {
             lineAccount.setVisibility(View.VISIBLE);
             imgAccount.setImageResource(R.drawable.ic_account_blue);
@@ -178,6 +187,11 @@ public class MainActivity extends AppCompatActivity implements MainView {
             imgAccount.setImageResource(R.drawable.ic_account_black);
             txtAccount.setTextColor(getResources().getColor(R.color.text_normal));
         }
+    }
+
+    @Override
+    public void clickReport() {
+        startActivity(new Intent(MainActivity.this, ReportActivity.class));
     }
 
     @OnClick({R.id.layout_dashboard, R.id.layout_video, R.id.layout_drone, R.id.layout_report, R.id.layout_account, R.id.img_search, R.id.img_filter})

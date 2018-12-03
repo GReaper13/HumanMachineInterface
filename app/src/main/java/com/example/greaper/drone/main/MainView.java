@@ -6,4 +6,5 @@ public interface MainView {
     void showDrone(boolean enable);
     void showReport(boolean enable);
     void showAccount(boolean enable);
+    void clickReport();
 }

@@ -1,0 +1,3 @@
+﻿- Về cơ bản khung giao diện đã xong, để đăng nhập nhập username: admin, pass: admin1234
+- Những phần chưa hoàn thiện: sửa lại list trong report, video và drone cho đẹp hơn, tinh chỉnh lại dashboard; thêm tính năng sửa lại lộ trình drone; tinh chỉnh lại để xem được thông tin trong phần video; phân quyền người dùng
+- Thời gian ước lượng sẽ hoàn thành: 1 tối (nếu như có design)
