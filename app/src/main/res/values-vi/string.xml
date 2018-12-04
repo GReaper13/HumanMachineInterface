@@ -30,7 +30,7 @@
     <string name="question_logout">Bạn có muốn đăng xuất không?</string>
     <string name="cancel">Hủy</string>
     <string name="ok">OK</string>
-    <string name="position">Chức vụ</string>
+    <string name="position">Chức vụ: </string>
     <string name="image_notifi">Hình ảnh và thông báo</string>
     <string name="image_setting">Cài đặt hình ảnh</string>
     <string name="notification_seting">Cài đặt thông báo</string>
@@ -62,4 +62,11 @@
     <string name="something_error">Có lỗi xảy ra</string>
     <string name="change_password_successfully">Đã đổi mật khẩu</string>
     <string name="phone_number">Số điện thoại</string>
+    <string name="change_start_time">Đổi thời gian bắt đầu</string>
+    <string name="choose_start_time">Chọn thời gian bắt đầu</string>
+    <string name="detail_drone">Thông tin drone</string>
+    <string name="code_drone">Mã: </string>
+    <string name="show_video">Xem video</string>
+    <string name="warning_content">Phát hiện có 1 thay đổi từ \n Drone No. 02</string>
+    <string name="view_detail">Xem chi tiết</string>
 </resources>

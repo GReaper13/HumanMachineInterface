@@ -3,10 +3,12 @@ package com.example.greaper.drone.ui;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.RectF;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,8 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,10 +30,7 @@ import com.github.chrisbanes.photoview.OnMatrixChangedListener;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
-import java.lang.reflect.Array;
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -59,10 +58,15 @@ public class VideoDroneActivity extends AppCompatActivity implements Const {
     RelativeLayout layoutPhotoView;
     @BindView(R.id.txt_time)
     TextView txtTime;
+    @BindView(R.id.ic_more)
+    ImageView icMore;
     private boolean firstCreate;
     private float originLeft, originTop;
 
+    private int countDroneCustom = 1;
+
     private List<ImageView> imageViewList;
+    private CountDownTimer countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +131,7 @@ public class VideoDroneActivity extends AppCompatActivity implements Const {
                             int countDrone = Integer.parseInt(edtCountDrone.getText().toString());
                             dialog.dismiss();
                             setNumberSpinner(countDrone);
+                            countDroneCustom = countDrone;
                         } else {
                             Toast.makeText(VideoDroneActivity.this, R.string.count_drone_error, Toast.LENGTH_SHORT).show();
                         }
@@ -142,7 +147,13 @@ public class VideoDroneActivity extends AppCompatActivity implements Const {
         spSelectDrone.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int countDrone = Integer.parseInt(spNumberDrone.getSelectedItem().toString());
+                int countDrone;
+                try {
+                    countDrone = Integer.parseInt(spNumberDrone.getSelectedItem().toString());
+                } catch (NumberFormatException e) {
+                    countDrone = countDroneCustom;
+                }
+
                 initList(countDrone);
                 layoutPhotoView.removeAllViews();
                 for (ImageView imageView : imageViewList) {
@@ -171,14 +182,15 @@ public class VideoDroneActivity extends AppCompatActivity implements Const {
                 }
             }
         });
-        new CountDownTimer(3000000, 1000) {
+        countDownTimer = new CountDownTimer(3000000, 1000) {
             public void onTick(long millisUntilFinished) {
                 txtTime.setText(AppUtils.intToTime(3000000 - millisUntilFinished + 7 * 3600 * 1000));
             }
 
             public void onFinish() {
             }
-        }.start();
+        };
+        countDownTimer.start();
     }
 
     private void setPositionIcon(int marginLeft, int marginTop, ImageView imgIcon, RectF rect) {
@@ -242,9 +254,16 @@ public class VideoDroneActivity extends AppCompatActivity implements Const {
             imageView.setTag(imageInfor);
             imageViewList.add(imageView);
             imageView.setOnClickListener(view -> {
-                Intent warningIntent = new Intent(VideoDroneActivity.this, VideoActivity.class);
-                warningIntent.putExtra(TYPE_WARNING, 2);
-                startActivity(warningIntent);
+                Dialog dialog = new Dialog(VideoDroneActivity.this);
+                dialog.setContentView(R.layout.dialog_drone_detail);
+                Button btnView = dialog.findViewById(R.id.btn_view);
+                btnView.setOnClickListener(view1 -> {
+                    dialog.dismiss();
+                    Intent warningIntent = new Intent(VideoDroneActivity.this, VideoActivity.class);
+                    warningIntent.putExtra(TYPE_WARNING, 2);
+                    startActivity(warningIntent);
+                });
+                dialog.show();
             });
         }
 
@@ -255,5 +274,71 @@ public class VideoDroneActivity extends AppCompatActivity implements Const {
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(height, height);
         lp.setMargins(marginLeft, marginTop, 0, 0);
         imageView.setLayoutParams(lp);
+    }
+
+    @OnClick(R.id.ic_more)
+    public void moreClick() {
+        PopupMenu popupMenu = new PopupMenu(this, icMore);
+        popupMenu.getMenuInflater().inflate(R.menu.sort_menu, popupMenu.getMenu());
+        popupMenu.show();
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.change_start_time) {
+                    Dialog timeDialog = new Dialog(VideoDroneActivity.this);
+                    timeDialog.setContentView(R.layout.dialog_choose_time);
+                    EditText edtHour = timeDialog.findViewById(R.id.edt_hour);
+                    EditText edtMinute = timeDialog.findViewById(R.id.edt_minute);
+                    EditText edtSecond = timeDialog.findViewById(R.id.edt_second);
+                    Button btnOK = timeDialog.findViewById(R.id.btn_ok);
+                    btnOK.setOnClickListener(view -> {
+                        try {
+                            int hour = Integer.parseInt(edtHour.getText().toString());
+                            int minute = Integer.parseInt(edtMinute.getText().toString());
+                            int second = Integer.parseInt(edtSecond.getText().toString());
+                            if (hour < 0 || hour >= 24 || minute < 0 || minute >= 60 || second < 0 || second >= 60) {
+                                Toast.makeText(VideoDroneActivity.this, getString(R.string.count_drone_error), Toast.LENGTH_SHORT).show();
+                            } else {
+                                timeDialog.dismiss();
+                                String time = hour + ":" + (minute < 10 ? ("0" + minute) : minute) + ":" + (second < 10 ? ("0" + second) : second);
+                                txtTime.setText(time);
+                                if (countDownTimer != null) {
+                                    countDownTimer.cancel();
+                                    long startTime = (hour * 3600 + minute * 60 + second) * 1000;
+                                    countDownTimer = new CountDownTimer(3000000, 1000) {
+                                        public void onTick(long millisUntilFinished) {
+                                            txtTime.setText(AppUtils.intToTime(3000000 - millisUntilFinished + startTime));
+                                        }
+
+                                        public void onFinish() {
+                                        }
+                                    };
+                                    countDownTimer.start();
+                                }
+                            }
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(VideoDroneActivity.this, getString(R.string.count_drone_error), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    timeDialog.show();
+                } else if (menuItem.getItemId() == R.id.warning) {
+                    Dialog differentDialog = new Dialog(VideoDroneActivity.this);
+                    differentDialog.setContentView(R.layout.dialog_warning);
+                    Button btnView = differentDialog.findViewById(R.id.btn_view_detail);
+                    MediaPlayer mediaPlayer = MediaPlayer.create(VideoDroneActivity.this, R.raw.alarm);
+                    mediaPlayer.start();
+                    btnView.setOnClickListener(view -> {
+                        mediaPlayer.stop();
+                        mediaPlayer.release();
+                        differentDialog.dismiss();
+                        Intent warningIntent = new Intent(VideoDroneActivity.this, DetailReportActivity.class);
+                        warningIntent.putExtra(TYPE_WARNING, Const.WARNING);
+                        startActivity(warningIntent);
+                    });
+                    differentDialog.show();
+                }
+                return true;
+            }
+        });
     }
 }

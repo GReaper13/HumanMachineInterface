@@ -253,25 +253,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
             case R.id.img_search:
                 break;
             case R.id.img_filter:
-                PopupMenu popupMenu = new PopupMenu(this, imgFilter);
-                popupMenu.getMenuInflater().inflate(R.menu.sort_menu, popupMenu.getMenu());
-                if (isFilterByDate) {
-                    popupMenu.getMenu().getItem(0).setChecked(true);
-                } else {
-                    popupMenu.getMenu().getItem(1).setChecked(true);
-                }
-                popupMenu.show();
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        if (menuItem.getItemId() == R.id.sort_by_date) {
-                            isFilterByDate = true;
-                        } else {
-                            isFilterByDate = false;
-                        }
-                        return true;
-                    }
-                });
                 break;
         }
     }

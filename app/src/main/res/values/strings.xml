@@ -21,7 +21,7 @@
     <string name="select_count_drone">Number drones</string>
     <string name="drone_to_view">Select drone(s) to view: </string>
     <string name="count_drone">Count drone per view</string>
-    <string name="count_drone_error">Valid input</string>
+    <string name="count_drone_error">Invalid input</string>
     <string name="select_icon_to_view">Select an icon to view detail.</string>
     <string name="dashboard">Dashboard</string>
     <string name="lable_drone">Drone activate</string>
@@ -30,7 +30,7 @@
     <string name="question_logout">Do you want to log out?</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
-    <string name="position">Position</string>
+    <string name="position">Position: </string>
     <string name="image_notifi">Image and notification</string>
     <string name="image_setting">Image setting</string>
     <string name="notification_seting">Notification setting</string>
@@ -63,4 +63,11 @@
     <string name="something_error">Something went wrong</string>
     <string name="change_password_successfully">Change password successfully</string>
     <string name="phone_number">Phone number</string>
+    <string name="change_start_time">Change start time</string>
+    <string name="choose_start_time">Choose start time</string>
+    <string name="detail_drone">Drone information</string>
+    <string name="code_drone">Code: </string>
+    <string name="show_video">View video</string>
+    <string name="warning_content">Detect a different from \n Drone No. 02</string>
+    <string name="view_detail">View detail</string>
 </resources>

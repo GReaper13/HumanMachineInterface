@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
-        <item android:id="@+id/sort_by_date"
-            android:title="By date" />
-        <item android:id="@+id/sort_by_name"
-            android:title="By drone" />
-    </group>
+        <item android:id="@+id/change_start_time"
+            android:title="@string/change_start_time" />
+        <item android:id="@+id/warning"
+            android:title="Test different">
+        </item>
 </menu>
