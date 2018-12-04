@@ -11,64 +11,134 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/forest"/>
+        android:src="@drawable/forest" />
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:padding="30dp">
+        android:padding="30dp"
+        android:rotation="45">
 
         <ImageView
             android:id="@+id/ivLeft"
             android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="5dp"
-            android:tint="@color/white"
-            android:src="@drawable/ic_left"/>
+            android:layout_height="70dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="70dp"
+            android:rotation="-45"
+            android:src="@drawable/ic_left"
+            android:tint="@color/white" />
 
         <ImageView
             android:id="@+id/ivRight"
             android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="5dp"
-            android:tint="@color/white"
-            android:src="@drawable/ic_right"/>
+            android:layout_height="70dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="0dp"
+            android:rotation="-45"
+            android:src="@drawable/ic_right"
+            android:tint="@color/white" />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/ivTop"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="0dp"
+            android:rotation="-135"
+            android:src="@drawable/ic_right"
+            android:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivBottom"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="70dp"
+            android:rotation="45"
+            android:src="@drawable/ic_right"
+            android:tint="@color/white" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
         android:background="@color/white"
         android:elevation="3dp"
-        android:layout_margin="20dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/ivDown"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="+"
             android:gravity="center"
+            android:text="+"
             android:textSize="40sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#cccccc"/>
+            android:background="#cccccc" />
 
         <TextView
             android:id="@+id/ivUp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="-"
             android:gravity="center"
+            android:text="-"
             android:textSize="40sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:background="#552da2f6">
+
+        <View
+            android:id="@+id/position"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@color/blur_red"
+            android:layout_marginTop="90dp"
+            android:layout_marginStart="75dp"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:background="#552da2f6">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pin: 59%"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Độ cao: 500m"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thu phóng: 1"
+            android:textColor="@color/white"/>
     </LinearLayout>
 </RelativeLayout>

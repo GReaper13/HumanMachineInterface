@@ -14,6 +14,7 @@
         android:background="@color/main_color">
 
         <ImageView
+            android:id="@+id/ivBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -38,6 +39,7 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tvDroneName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="  DR6667"
@@ -87,6 +89,7 @@
                 android:textColor="#000" />
 
             <TextView
+                android:id="@+id/tvTimeRemain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 05:00 s"

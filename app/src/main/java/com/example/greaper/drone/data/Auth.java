@@ -46,7 +46,7 @@ public class Auth {
         }
         if (username.equals("admin") && password.equals("admin1234")) {
             currentUser = new User();
-            currentUser.setName("admin");
+            currentUser.setName("Quản trị viên");
             currentUser.setRole("admin");
             callback.onFinish(new Task<>(true, currentUser));
             return;

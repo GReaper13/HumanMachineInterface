@@ -56,7 +56,7 @@ public class TabDroneFragment extends Fragment {
 
     private void init() {
         for (int i = 0; i < 450; i++) {
-            droneList.add(new Drone(i, "Drone " + i + ": Số hiệu: " + randomString()));
+            droneList.add(new Drone(i,randomString()));
         }
         Context context = getContext();
         adapter = new DroneAdapter(context, droneList);
@@ -67,6 +67,8 @@ public class TabDroneFragment extends Fragment {
                 return;
             }
             Intent intent = new Intent(context, DroneActivity.class);
+            intent.putExtra("drone_id", droneList.get(position).getId());
+            intent.putExtra("drone_name", droneList.get(position).getName());
             startActivity(intent);
         });
     }

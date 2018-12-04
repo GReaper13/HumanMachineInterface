@@ -11,9 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.greaper.drone.R;
+import com.example.greaper.drone.data.Auth;
 import com.example.greaper.drone.data.FAQ;
+import com.example.greaper.drone.data.User;
 import com.example.greaper.drone.ui.AccountSettingsActivity;
 import com.example.greaper.drone.ui.ChangePasswordActivity;
 import com.example.greaper.drone.ui.FAQActivity;
@@ -31,12 +34,25 @@ public class ProfileFragment extends Fragment {
     @BindView(R.id.btnLogout)
     Button btnLogout;
 
+    @BindView(R.id.tvName)
+    TextView tvName;
+
+    @BindView(R.id.tvRole)
+    TextView tvRole;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this, view);
+
+        User user = Auth.getInstance().getCurrentUser();
+//        tvName.setText("Tên: " + user.getName());
+//        if (user.getRole().equals("admin"))
+        tvRole.setText("Chức vụ: " + user.getName());
+
+
         return view;
     }
 
