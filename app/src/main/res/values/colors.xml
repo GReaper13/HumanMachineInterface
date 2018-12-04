@@ -10,4 +10,11 @@
 
     <color name="blur_yellow">#beb1c101</color>
     <color name="blur_red">#bec10101</color>
+
+    <color name="blue_dashboard">#06bfb0</color>
+    <color name="blue_dashboard_select">#04746b</color>
+    <color name="yellow_dashboard">#eccc40</color>
+    <color name="yellow_dashboard_select">#998529</color>
+    <color name="red_dashboard">#c94450</color>
+    <color name="red_dashboard_select">#862d35</color>
 </resources>

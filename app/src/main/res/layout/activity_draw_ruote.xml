@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DrawRouteActivity"
+    android:id="@+id/layout_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:id="@+id/layout_header"
+        android:background="@color/main_color">
+
+        <ImageView
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="15dp"
+            android:background="?android:selectableItemBackground"
+            android:id="@+id/img_back"
+            android:onClick="backClick"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/report"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/img_main"
+        android:layout_below="@id/layout_header"
+        android:scaleType="centerCrop"/>
+
+    <com.example.greaper.drone.view.DrawView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_header"
+        android:id="@+id/dv_main" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:id="@+id/layout_check_draw"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
+            android:src="@drawable/ic_refresh"
+            android:padding="12dp"
+            android:layout_marginRight="30dp"
+            android:background="?android:selectableItemBackground"
+            android:id="@+id/img_refresh"/>
+
+        <ImageView
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
+            android:src="@drawable/ic_check_black"
+            android:padding="12dp"
+            android:background="?android:selectableItemBackground"
+            android:id="@+id/img_ok"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

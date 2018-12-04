@@ -24,4 +24,6 @@
     <string name="count_drone_error">Valid input</string>
     <string name="select_icon_to_view">Select an icon to view detail.</string>
     <string name="dashboard">Dashboard</string>
+    <string name="lable_drone">Drone activate</string>
+    <string name="lable_case">Total case</string>
 </resources>

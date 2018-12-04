@@ -145,7 +145,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="7dp"
             android:layout_marginEnd="7dp"
-            app:srcCompat="@drawable/ic_edit_white" />
+            app:srcCompat="@drawable/ic_edit_white"
+            android:id="@+id/img_edit"/>
 
     </RelativeLayout>
 
