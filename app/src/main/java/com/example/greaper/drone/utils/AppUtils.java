@@ -1,6 +1,7 @@
 package com.example.greaper.drone.utils;
 
 public class AppUtils {
+    private static String currentRole = Const.ADMIN;
     public static String intToTime(long time) {
         int timeInInt = (int)(time / 1000);
         int hours = timeInInt / 3600;
@@ -25,5 +26,13 @@ public class AppUtils {
             result += seconds;
         }
         return result;
+    }
+
+    public static void setCurrentRole(String currentRole) {
+        AppUtils.currentRole = currentRole;
+    }
+
+    public static String getCurrentRole() {
+        return AppUtils.currentRole;
     }
 }

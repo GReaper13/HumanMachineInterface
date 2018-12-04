@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Cài đặt tài khoản"
+            android:text="@string/account_setting"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -90,7 +90,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Số điện thoại:"
+                android:text="@string/phone_number"
                 android:textColor="#000"
                 android:textSize="15sp" />
 
@@ -116,7 +116,7 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@color/main_color"
-        android:text="Lưu"
+        android:text="@string/save"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="18sp"/>

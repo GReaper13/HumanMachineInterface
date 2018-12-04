@@ -15,11 +15,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>        </activity>
+        </activity>
         <activity
             android:name=".ui.DroneActivity"
             android:screenOrientation="portrait" />
@@ -28,7 +24,13 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".ui.LoginActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.ImageSettingsActivity" />
         <activity android:name=".ui.NotificationSettingsActivity" />
         <activity android:name=".ui.AccountSettingsActivity" />
@@ -43,11 +45,12 @@
             android:name=".ui.VideoActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".ui.VideoDroneActivity" />
-        <activity android:name=".ui.DrawRouteActivity"></activity>
+        <activity android:name=".ui.DrawRouteActivity" />
         <activity android:name=".ui.ResultActivity" />
-        <activity android:name=".ui.GraphActivity"
-            android:screenOrientation="landscape">
-        </activity>
+        <activity
+            android:name=".ui.GraphActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ui.AddDroneActivity"></activity>
     </application>
 
 </manifest>

@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Cài đặt thông báo"
+            android:text="@string/notification_seting"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -59,7 +59,7 @@
                     android:paddingEnd="20dp"
                     android:paddingStart="20dp"
                     android:paddingTop="12dp"
-                    android:text="Gửi thông báo đến email"
+                    android:text="@string/send_to_email"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -85,7 +85,7 @@
                     android:paddingEnd="20dp"
                     android:paddingStart="20dp"
                     android:paddingTop="12dp"
-                    android:text="Gửi thông báo đến số điện thoại"
+                    android:text="@string/send_to_phone"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -111,7 +111,7 @@
                     android:paddingEnd="20dp"
                     android:paddingStart="20dp"
                     android:paddingTop="12dp"
-                    android:text="Nhận thông báo trên ứng dụng"
+                    android:text="@string/notification"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -138,7 +138,7 @@
                     android:paddingEnd="20dp"
                     android:paddingStart="20dp"
                     android:paddingTop="12dp"
-                    android:text="Âm thanh khi có thông báo"
+                    android:text="@string/sound_when_notification"
                     android:textColor="#000"
                     android:textSize="15sp" />
 

@@ -7,5 +7,7 @@ public interface Const {
     String NAME_GRAPH = "name_graph";
     int DRONE = 1;
     int DIFFERENT = 2;
+    String ADMIN = "admin";
+    String RANGER = "ranger";
 
 }

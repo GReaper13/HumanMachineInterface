@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Drone</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drone">Drone</string>
+    <string name="code">Số hiệu: </string>
+    <string name="start">Bắt đầu: </string>
+    <string name="account">Tài khoản</string>
+    <string name="logout">Đăng xuất</string>
+
+    <string name="location">Vị trí: </string>
+    <string name="report_detail">Báo cáo chi tiết</string>
+    <string name="select_drone">Chọn drone để quan sát : </string>
+    <string name="detail">Chi tiết: </string>
+    <string name="ranger">Kiểm lâm</string>
+    <string name="time">Thời gian</string>
+    <string name="video">Video</string>
+    <string name="show_full_video">Chạm 2 lần vào video để xem</string>
+    <string name="report">Báo cáo</string>
+    <string name="select_count_drone">Số lượng drone</string>
+    <string name="drone_to_view">Chọn drone để xem </string>
+    <string name="count_drone">Số drone mỗi lần xem</string>
+    <string name="count_drone_error">Input không hợp lệ</string>
+    <string name="select_icon_to_view">Chọn 1 icon để xem chi tiết.</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="lable_drone">Drone hoạt động</string>
+    <string name="lable_case">trường hợp</string>
+    <string name="warning">Cảnh báo</string>
+    <string name="question_logout">Bạn có muốn đăng xuất không?</string>
+    <string name="cancel">Hủy</string>
+    <string name="ok">OK</string>
+    <string name="position">Chức vụ</string>
+    <string name="image_notifi">Hình ảnh và thông báo</string>
+    <string name="image_setting">Cài đặt hình ảnh</string>
+    <string name="notification_seting">Cài đặt thông báo</string>
+    <string name="account_setting">Cài đặt tài khoản</string>
+    <string name="change_password">Thay đổi mật khẩu</string>
+    <string name="help">Trợ giúp</string>
+    <string name="faq">Câu hỏi thường gặp</string>
+    <string name="to_control_drone">Bạn có muốn tắt tự động bay? Bạn sẽ phải điều khiển drone bằng tay!</string>
+    <string name="connected_drone">Các drone đã kết nối</string>
+    <string name="add_drone">Thêm drone</string>
+    <string name="recent_drone">Các drone ở gần đây</string>
+    <string name="password">Mật khẩu</string>
+    <string name="add_suceesfully">Thêm drone thành công </string>
+    <string name="not_match_account">Tên đăng nhập hoặc mật khẩu không đúng</string>
+    <string name="username_invalid">Tên đăng nhập không đúng</string>
+    <string name="password_short">Mật khẩu quá ngắn</string>
+    <string name="login">Đăng nhập</string>
+    <string name="username">Tên đăng nhập</string>
+    <string name="send_to_email">Gửi thông báo đến email</string>
+    <string name="send_to_phone">Gửi thông báo đến số điện thoại</string>
+    <string name="notification">Nhận thông báo trên ứng dụng</string>
+    <string name="sound_when_notification"> Âm thanh khi có thông báo</string>
+    <string name="old_password">Mật khẩu cũ:</string>
+    <string name="new_password">Mật khẩu mới:</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="save">Lưu</string>
+    <string name="wrong_password">Mật khẩu cũ không đúng</string>
+    <string name="password_not_match">Mật khẩu không khớp</string>
+    <string name="something_error">Có lỗi xảy ra</string>
+    <string name="change_password_successfully">Đã đổi mật khẩu</string>
+    <string name="phone_number">Số điện thoại</string>
+</resources>

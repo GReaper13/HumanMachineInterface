@@ -1,6 +1,7 @@
 package com.example.greaper.drone.main.drone;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,9 +16,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.greaper.drone.R;
 import com.example.greaper.drone.data.Drone;
+import com.example.greaper.drone.ui.AddDroneActivity;
 import com.example.greaper.drone.ui.DroneActivity;
 
 import java.util.ArrayList;
@@ -42,6 +45,8 @@ public class TabDroneFragment extends Fragment {
 
     @BindView(R.id.rvDrone)
     RecyclerView rvDrone;
+    @BindView(R.id.txt_add_drone)
+    TextView txtAddDrone;
     DroneAdapter adapter;
     List<Drone> droneList = new ArrayList<>();
 
@@ -55,7 +60,7 @@ public class TabDroneFragment extends Fragment {
     }
 
     private void init() {
-        for (int i = 0; i < 450; i++) {
+        for (int i = 0; i < 6; i++) {
             droneList.add(new Drone(i,randomString()));
         }
         Context context = getContext();
@@ -71,6 +76,9 @@ public class TabDroneFragment extends Fragment {
             intent.putExtra("drone_name", droneList.get(position).getName());
             startActivity(intent);
         });
+        txtAddDrone.setOnClickListener(view -> {
+            startActivityForResult(new Intent(context, AddDroneActivity.class), 500);
+        });
     }
 
     static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -82,4 +90,13 @@ public class TabDroneFragment extends Fragment {
         return sb.toString();
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 500 && resultCode == Activity.RESULT_OK) {
+            String newDrone = data.getStringExtra("code");
+            droneList.add(new Drone(droneList.size(), newDrone));
+            adapter.notifyDataSetChanged();
+        }
+    }
 }

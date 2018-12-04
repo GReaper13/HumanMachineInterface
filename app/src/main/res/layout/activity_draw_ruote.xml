@@ -33,18 +33,21 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/img_main"
-        android:layout_below="@id/layout_header"
-        android:scaleType="centerCrop"/>
-
-    <com.example.greaper.drone.view.DrawView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/layout_header"
-        android:id="@+id/dv_main" />
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/img_main"
+            android:scaleType="centerCrop"/>
+        <com.example.greaper.drone.view.DrawView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/dv_main" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +55,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="#c9c9c9"
         android:paddingBottom="10dp"
         android:paddingTop="5dp"
         android:id="@+id/layout_check_draw"
@@ -74,7 +77,18 @@
             android:padding="12dp"
             android:background="?android:selectableItemBackground"
             android:id="@+id/img_ok"/>
-
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#57000000"
+        android:id="@+id/layout_loading"
+        android:visibility="gone">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
 
 </RelativeLayout>

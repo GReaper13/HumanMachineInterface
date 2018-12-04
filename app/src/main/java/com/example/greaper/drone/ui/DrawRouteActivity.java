@@ -44,6 +44,8 @@ public class DrawRouteActivity extends AppCompatActivity implements DrawView.Dra
     public Bitmap mainBitmap;
     @BindView(R.id.layout_main)
     RelativeLayout layoutMain;
+    @BindView(R.id.layout_loading)
+    RelativeLayout layoutLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +69,12 @@ public class DrawRouteActivity extends AppCompatActivity implements DrawView.Dra
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_refresh:
-                dvMain.clear();
-                layoutCheckDraw.setVisibility(View.GONE);
+//                dvMain.clear();
+//                layoutCheckDraw.setVisibility(View.GONE);
+                recreate();
                 break;
             case R.id.img_ok:
+                layoutLoading.setVisibility(View.VISIBLE);
                 Bitmap workingBitmap = Bitmap.createBitmap(mainBitmap);
                 Bitmap mutableBitmap = workingBitmap.copy(Bitmap.Config.ARGB_8888, true);
                 Canvas canvas = new Canvas(mutableBitmap);
@@ -81,6 +85,8 @@ public class DrawRouteActivity extends AppCompatActivity implements DrawView.Dra
                 byte[] byteArray = stream.toByteArray();
                 String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
                 HawkHelper.setImageRoute(encoded);
+                layoutLoading.setVisibility(View.GONE);
+                finish();
                 break;
         }
     }

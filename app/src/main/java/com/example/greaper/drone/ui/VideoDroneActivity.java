@@ -238,7 +238,7 @@ public class VideoDroneActivity extends AppCompatActivity implements Const {
             ImageView imageView = new ImageView(this);
             initImageView(imageView, marginLeft, marginTop);
             Image imageInfor = new Image(marginTop, marginLeft, 2);
-            imageView.setImageResource(R.drawable.ic_drone_black);
+            imageView.setImageResource(R.drawable.ic_drone_blue);
             imageView.setTag(imageInfor);
             imageViewList.add(imageView);
             imageView.setOnClickListener(view -> {

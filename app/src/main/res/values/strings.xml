@@ -4,8 +4,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="drone">Drone</string>
-    <string name="code">Số hiệu: </string>
-    <string name="start">Bắt đầu</string>
+    <string name="code">No: </string>
+    <string name="start">Start: </string>
     <string name="account">Account</string>
     <string name="logout">Logout</string>
 
@@ -26,4 +26,41 @@
     <string name="dashboard">Dashboard</string>
     <string name="lable_drone">Drone activate</string>
     <string name="lable_case">Total case</string>
+    <string name="warning">Warning</string>
+    <string name="question_logout">Do you want to log out?</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="position">Position</string>
+    <string name="image_notifi">Image and notification</string>
+    <string name="image_setting">Image setting</string>
+    <string name="notification_seting">Notification setting</string>
+    <string name="account_setting">Account setting</string>
+    <string name="change_password">Change password</string>
+    <string name="help">Help</string>
+    <string name="faq">FAQ</string>
+    <string name="to_control_drone">Do yout want to disable auto fly? You must control drone!</string>
+
+    <string name="connected_drone">Connected Drones</string>
+    <string name="add_drone">Add drone</string>
+    <string name="recent_drone">Recent Drones</string>
+    <string name="password">Password</string>
+    <string name="add_suceesfully">Add drone successfully</string>
+    <string name="not_match_account">Username and password not match any account</string>
+    <string name="username_invalid">Username is not valid</string>
+    <string name="password_short">Password is too short</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="send_to_email">Send notification to email</string>
+    <string name="send_to_phone">Send notification to number phone</string>
+    <string name="notification">Notification</string>
+    <string name="sound_when_notification">Sound when have notification</string>
+    <string name="old_password">Old password:</string>
+    <string name="new_password">New password:</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="save">Save</string>
+    <string name="wrong_password">Wrong password</string>
+    <string name="password_not_match">Password not match</string>
+    <string name="something_error">Something went wrong</string>
+    <string name="change_password_successfully">Change password successfully</string>
+    <string name="phone_number">Phone number</string>
 </resources>

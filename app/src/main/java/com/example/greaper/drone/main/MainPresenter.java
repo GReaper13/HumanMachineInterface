@@ -10,6 +10,8 @@ import com.example.greaper.drone.main.drone.TabDroneFragment;
 import com.example.greaper.drone.main.profile.ProfileFragment;
 import com.example.greaper.drone.main.report.ReportFragment;
 import com.example.greaper.drone.main.video.VideoFragment;
+import com.example.greaper.drone.utils.AppUtils;
+import com.example.greaper.drone.utils.Const;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,15 +67,19 @@ public class MainPresenter {
 
     public List<Fragment> getListFragment() {
         List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(new DashboardFragment());
-        fragmentList.add(new VideoFragment());
-        fragmentList.add(TabDroneFragment.newInstance());
-        ReportFragment reportFragment = new ReportFragment();
-        reportFragment.setOnReportFragmentListener(() -> {
-            mainView.clickReport();
-        });
-        fragmentList.add(reportFragment);
-        fragmentList.add(new ProfileFragment());
+        if (AppUtils.getCurrentRole().equals(Const.ADMIN)) {
+            fragmentList.add(new DashboardFragment());
+            fragmentList.add(new VideoFragment());
+            ReportFragment reportFragment = new ReportFragment();
+            reportFragment.setOnReportFragmentListener(() -> {
+                mainView.clickReport();
+            });
+            fragmentList.add(reportFragment);
+            fragmentList.add(new ProfileFragment());
+        } else {
+            fragmentList.add(TabDroneFragment.newInstance());
+            fragmentList.add(new ProfileFragment());
+        }
         return fragmentList;
     }
 

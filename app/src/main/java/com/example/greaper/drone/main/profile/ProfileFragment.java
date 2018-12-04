@@ -50,7 +50,10 @@ public class ProfileFragment extends Fragment {
         User user = Auth.getInstance().getCurrentUser();
 //        tvName.setText("Tên: " + user.getName());
 //        if (user.getRole().equals("admin"))
-        tvRole.setText("Chức vụ: " + user.getName());
+        if (user == null) {
+            user = new User();
+        }
+        tvRole.setText(getString(R.string.position) + user.getName());
 
 
         return view;
@@ -63,11 +66,11 @@ public class ProfileFragment extends Fragment {
             return;
         }
         new AlertDialog.Builder(context)
-                .setTitle("Cảnh báo")
-                .setMessage("Bạn có chắc chắn muốn đăng xuất?")
-                .setNegativeButton("Huỷ", (dialog, which) -> {
+                .setTitle(getString(R.string.warning))
+                .setMessage(getString(R.string.question_logout))
+                .setNegativeButton(getString(R.string.cancel), (dialog, which) -> {
                     dialog.cancel();
-                }).setPositiveButton("OK", (dialog, which) -> {
+                }).setPositiveButton(getString(R.string.ok), (dialog, which) -> {
             dialog.cancel();
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

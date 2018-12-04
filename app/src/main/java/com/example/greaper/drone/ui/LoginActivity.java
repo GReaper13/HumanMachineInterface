@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     navigate();
                 } else {
-                    alert("Username and password not match any account");
+                    alert(getString(R.string.not_match_account));
                 }
             }
         });
@@ -58,10 +58,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private String validate(String username, String password) {
         if (username == null || username.isEmpty()) {
-            return "Username is not valid";
+            return getString(R.string.username_invalid);
         }
         if (password == null || password.length() < 6) {
-            return "Password is too short";
+            return getString(R.string.password_short);
         }
         return null;
     }

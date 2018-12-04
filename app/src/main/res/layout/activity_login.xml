@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đăng nhập"
+                android:text="@string/login"
                 android:textAllCaps="true"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:textSize="14sp"/>
 
             <EditText
@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textSize="14sp"/>
 
@@ -69,7 +69,7 @@
                 android:layout_marginTop="50dp"
                 android:background="#1699df"
                 android:textColor="@color/white"
-                android:text="Đăng nhập"
+                android:text="@string/login"
                 android:textAllCaps="false"/>
         </LinearLayout>
     </LinearLayout>

@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/ivAvatar"
-                    android:text="Tên: Thân Văn Thái"
+                    android:text="Name: Thân Văn Thái"
                     android:textColor="@color/black"
                     android:paddingStart="20dp"
                     android:textStyle="bold"
@@ -49,7 +49,6 @@
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/ivAvatar"
                     android:layout_below="@id/tvName"
-                    android:text="Chức vụ: Quản trị viên"
                     android:textColor="@color/black"
                     android:paddingStart="20dp"
                     android:layout_marginTop="3dp"
@@ -66,7 +65,7 @@
                 android:paddingEnd="15sp"
                 android:paddingStart="15dp"
                 android:paddingTop="5dp"
-                android:text="Hình ảnh và Thông báo"
+                android:text="@string/image_notifi"
                 android:textAllCaps="true"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -94,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="Cài đặt hình ảnh"
+                    android:text="@string/image_setting"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -129,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="Cài đặt thông báo"
+                    android:text="@string/notification_seting"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -150,7 +149,7 @@
                 android:paddingEnd="15sp"
                 android:paddingStart="15dp"
                 android:paddingTop="5dp"
-                android:text="Tài khoản"
+                android:text="@string/account"
                 android:textAllCaps="true"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -178,7 +177,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="Cài đặt tài khoản"
+                    android:text="@string/account_setting"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -213,7 +212,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="Đổi mật khẩu"
+                    android:text="@string/change_password"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -224,8 +223,6 @@
                     app:srcCompat="@drawable/ic_keyboard_arrow_right" />
             </LinearLayout>
 
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -235,7 +232,7 @@
                 android:paddingEnd="15sp"
                 android:paddingStart="15dp"
                 android:paddingTop="5dp"
-                android:text="Trợ giúp"
+                android:text="@string/help"
                 android:textAllCaps="true"
                 android:textColor="#000"
                 android:textSize="15sp" />
@@ -263,7 +260,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="Trợ giúp"
+                    android:text="@string/help"
                     android:textColor="#000"
                     android:textSize="15sp" />
 
@@ -298,7 +295,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="Câu hỏi thường gặp"
+                    android:text="@string/faq"
                     android:textColor="#000"
                     android:textSize="15sp" />
 

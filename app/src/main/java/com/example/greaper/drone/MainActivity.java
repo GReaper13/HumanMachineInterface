@@ -16,6 +16,8 @@ import com.example.greaper.drone.main.MainPagerAdapter;
 import com.example.greaper.drone.main.MainPresenter;
 import com.example.greaper.drone.main.MainView;
 import com.example.greaper.drone.ui.ReportActivity;
+import com.example.greaper.drone.utils.AppUtils;
+import com.example.greaper.drone.utils.Const;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -92,6 +94,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     private void initViews() {
+        if (AppUtils.getCurrentRole().equals(Const.RANGER)) {
+            layoutDashboard.setVisibility(View.GONE);
+            layoutVideo.setVisibility(View.GONE);
+            layoutReport.setVisibility(View.GONE);
+        } else {
+            layoutDrone.setVisibility(View.GONE);
+        }
         mainPresenter = new MainPresenter(this, this);
         mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         mainPagerAdapter.setFragmentList(mainPresenter.getListFragment());
@@ -104,12 +113,31 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
             @Override
             public void onPageSelected(int i) {
-                mainPresenter.changeViewPager(i);
-                if (i == 1) {
-                    layoutOption.setVisibility(View.VISIBLE);
+                if (AppUtils.getCurrentRole().equals(Const.ADMIN)) {
+                    switch (i) {
+                        case 0:
+                            mainPresenter.changeViewPager(0);
+                            break;
+                        case 1:
+                            mainPresenter.changeViewPager(1);
+                            break;
+                        case 2:
+                            mainPresenter.changeViewPager(3);
+                            break;
+                        case 3:
+                            mainPresenter.changeViewPager(4);
+                            break;
+                    }
                 } else {
-                    layoutOption.setVisibility(View.GONE);
+                    switch (i) {
+                        case 0:
+                            mainPresenter.changeViewPager(2);
+                            break;
+                        case 1:
+                            mainPresenter.changeViewPager(4);
+                    }
                 }
+
             }
 
             @Override
@@ -121,8 +149,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showDashboard(boolean enable) {
-        txtTitle.setText(R.string.dashboard);
         if (enable) {
+            txtTitle.setText(R.string.dashboard);
             lineDashboard.setVisibility(View.VISIBLE);
             imgDashboard.setImageResource(R.drawable.ic_graph_blue);
             txtDashboard.setTextColor(getResources().getColor(R.color.main_color));
@@ -135,8 +163,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showVideo(boolean enable) {
-        txtTitle.setText(R.string.video);
         if (enable) {
+            txtTitle.setText(R.string.video);
             lineVideo.setVisibility(View.VISIBLE);
             imgVideo.setImageResource(R.drawable.ic_video_blue);
             txtVideo.setTextColor(getResources().getColor(R.color.main_color));
@@ -149,8 +177,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showDrone(boolean enable) {
-        txtTitle.setText(R.string.drone);
         if (enable) {
+            txtTitle.setText(R.string.drone);
             lineDrone.setVisibility(View.VISIBLE);
             imgDrone.setImageResource(R.drawable.ic_drone_blue);
             txtDrone.setTextColor(getResources().getColor(R.color.main_color));
@@ -163,12 +191,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showReport(boolean enable) {
-        txtTitle.setText(R.string.report);
         if (enable) {
+            txtTitle.setText(R.string.report);
             lineReport.setVisibility(View.VISIBLE);
             imgReport.setImageResource(R.drawable.ic_report_blue);
             txtReport.setTextColor(getResources().getColor(R.color.main_color));
         } else {
+
             lineReport.setVisibility(View.GONE);
             imgReport.setImageResource(R.drawable.ic_report_black);
             txtReport.setTextColor(getResources().getColor(R.color.text_normal));
@@ -177,8 +206,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showAccount(boolean enable) {
-        txtTitle.setText(R.string.account);
         if (enable) {
+            txtTitle.setText(R.string.account);
             lineAccount.setVisibility(View.VISIBLE);
             imgAccount.setImageResource(R.drawable.ic_account_blue);
             txtAccount.setTextColor(getResources().getColor(R.color.main_color));
@@ -207,15 +236,19 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 break;
             case R.id.layout_drone:
                 mainPresenter.changeViewPager(2);
-                vpMain.setCurrentItem(2);
+                vpMain.setCurrentItem(0);
                 break;
             case R.id.layout_report:
                 mainPresenter.changeViewPager(3);
-                vpMain.setCurrentItem(3);
+                vpMain.setCurrentItem(2);
                 break;
             case R.id.layout_account:
                 mainPresenter.changeViewPager(4);
-                vpMain.setCurrentItem(4);
+                if (AppUtils.getCurrentRole().equals(Const.ADMIN)) {
+                    vpMain.setCurrentItem(3);
+                } else {
+                    vpMain.setCurrentItem(1);
+                }
                 break;
             case R.id.img_search:
                 break;

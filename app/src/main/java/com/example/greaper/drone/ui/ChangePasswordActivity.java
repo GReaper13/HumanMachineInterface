@@ -45,24 +45,24 @@ public class ChangePasswordActivity extends AppCompatActivity {
         String confirm = edtConfirmPassword.getText().toString().trim();
 
         if (oldPw.length() < 6) {
-            alert("Mật khẩu cũ không đúng");
+            alert(getString(R.string.wrong_password));
             return;
         }
         if (newPw.length() < 6) {
-            alert("Mật khẩu có tối thiểu 6 ký tự");
+            alert(getString(R.string.password_short));
             return;
         }
         if (!confirm.equals(newPw)) {
-            alert("Mật khẩu không khớp");
+            alert(getString(R.string.password_not_match));
             return;
         }
 
         User currentUser = Auth.getInstance().getCurrentUser();
         if (currentUser == null) {
-            Toast.makeText(this, "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.something_error), Toast.LENGTH_SHORT).show();
             return;
         }
-        Toast.makeText(this, "Đã đổi mật khẩu", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.change_password_successfully), Toast.LENGTH_SHORT).show();
         finish();
     }
 
